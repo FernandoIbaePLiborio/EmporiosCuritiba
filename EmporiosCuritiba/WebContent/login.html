@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="usuariosModulo">
+<head>
+<meta charset="utf-8">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="controller/usuarios.js"></script>
+<script src="controller/app.js"></script>
+<script src="js/main.js"></script>
+<script src="menu.html"></script>
+
+<!-- jquery -->
+<script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+
+<!-- Crypto -->
+<script src="components/core-min.js"></script>
+<script src="rollups/sha1.js"></script>
+<script src="rollups/aes.js"></script>
+<script src="components/enc-base64-min.js"></script>
+<script src="components/enc-utf16-min.js"></script>
+<!-- angular -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"> -->
+
+</head>
+<!-- NAVBAR
+	================================================== -->
+<body ng-controller="usuariosController">
+
+	<div ng-include src="'menu.html'"></div>
+	<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sem-padding">
+			<form id="formCadastro" class="form-horizontal alinhamento-cadastro-usu">
+			<h2>Login</h2>
+				<div class="form-group">
+					<div class="col-sm-4 input-group">
+						<span class="input-group-addon">@</span> <input type="email" id="email" ng-model="usuario.email" class="form-control"
+							placeholder="Insira seu Email" data-error="Por favor, informe um e-mail correto." required>
+					</div>
+					<div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4 input-group">
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-lock"></span></span> <input type="password" class="form-control" id="senha" 
+							ng-model="usuario.senha" placeholder="Insira sua Senha" data-minlength="6" required>
+					</div>
+					<span class="help-block">Mínimo de seis (6) digitos</span>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label> <input type="checkbox"> Remember me</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button ng-disabled="!usuario.senha" type="submit" ng-click="logar()" class="btn btn-default">Entre</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+</body>
+</html>

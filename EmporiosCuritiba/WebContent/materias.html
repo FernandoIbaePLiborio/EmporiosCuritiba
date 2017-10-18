@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clientesModulo">
+<head>
+<meta charset="ISO-8859-1">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/estilos.css" rel="stylesheet">
+	<link href="css/carousel.css" rel="stylesheet">
+	<link href="css/botoesPersonalizados.css" rel="stylesheet">
+	<!-- jquery -->
+	<script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+	<!-- angular -->
+	<link rel="stylesheet" href="css/angular-material.min.css">
+	<link rel="stylesheet" href="css/angular-material.css">
+	<link rel="stylesheet" href="css/docs.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"> -->
+</head>
+<body ng-controller="clientesController" ng-cloak>
+	
+	<div ng-include src="'menu.html'"></div>
+	<div class="container">
+		<h2>Certificação de Orgânicos</h2>
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+	    	<div id="myCarousel" class="carousel slide sem-padding" data-ride="carousel ">
+		      <!-- Indicators -->
+		      <ol class="carousel-indicators">
+		        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		        <li data-target="#myCarousel" data-slide-to="1"></li>
+		      </ol>
+		      <div class="carousel-inner" role="listbox">
+		        <div class="item active">
+		          <img class="first-slide img img-responsive img-rounded" src="imagens/AlimentoClassOrganico.PNG" alt="" height="150">
+		        </div>
+		        <div class="item">
+		          <img class="second-slide img img-responsive img-rounded" src="imagens/CertificadosOrganico.PNG" alt="" height="150">
+		        </div>
+		      </div>
+		      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		        <span class="sr-only">Previous</span>
+		      </a>
+		      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		        <span class="sr-only">Next</span>
+		      </a><div class="container col-sm-1"></div>
+		    </div><!-- /.carousel -->
+	    </div>
+	</div>		
+    
+	<script src="js/angular.min.js"></script>
+	<script src="controller/usuarios.js"></script>
+	<script src="controller/app.js"></script>
+	<script src="controller/clientes.js"></script>
+	<script src="js/main.js"></script>
+	<script src="menu.html"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+	<script src="js/angular-aria.min.js"></script>
+	<script src="js/angular-messages.min.js"></script>
+	<script src="js/angular-material.min.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script> -->
+	<script src="js/angular-material.js"></script>
+</body>
+</html>

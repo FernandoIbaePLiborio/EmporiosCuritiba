@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="enderecosModulo">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="controller/enderecos.js"></script>
+<script src="js/main.js"></script>
+<script src="menu.html"></script>
+<!-- jquery -->
+<script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+</head>
+<body ng-controller="enderecosController">
+	<div ng-include src="'menu.html'"></div>
+	<div class="container">
+	<h2>Endereço</h2>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-formMargem sem-padding">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-3">
+						<input type="Text" required ng-model="endereco.cep"	class="form-control" id="cep" placeholder="CEP"
+						 onkeypress="mascara(this, mcep)" maxlength="10" ng-keydown="$event.keyCode === 13 && buscaCEP()">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.logradouro" class="form-control" id="logradouro" placeholder="Rua">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.numero" class="form-control" id="numero" placeholder="Número" onkeyup="masc_idade(this);" maxlength="15">
+						</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.complemento" class="form-control" id="complemento" placeholder="Complemento">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.bairro" class="form-control" id="bairro" placeholder="Bairro">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.localidade" class="form-control" id="localidade" placeholder="Cidade">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<input type="Text" ng-model="endereco.uf" class="form-control" id="uf" placeholder="UF" maxlength="2">
+					</div>
+				</div>
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" ng-click="limparCampos()"	class="btn btn-novo btn-sm">Novo</button>
+					<button ng-disabled="!endereco" type="submit" ng-click="gravar()" class="btn btn-gravar btn-sm">Gravar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- /.container -->
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+	<script src="js/mascaras.js"></script>
+</body>
+</html>

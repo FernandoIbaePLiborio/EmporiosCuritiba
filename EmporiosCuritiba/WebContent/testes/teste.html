@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="controller/usuarios.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+	<form id="formCadastro" data-toggle="validator" class="form-horizontal alinhamento-cadastro-usu">
+		<div class="form-group">
+			<div class="col-sm-4 input-group">
+				<span class="input-group-addon">@</span> 
+				<input type="email" id="email" ng-model="usuario.email" class="form-control" placeholder="Insira seu Email" 
+				data-error="Por favor, informe um e-mail correto." required>	
+			</div>
+			<div class="help-block with-errors"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4 input-group">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-lock"></span></span>
+				<input type="password" class="form-control" id="senha" ng-model="usuario.senha" 
+				placeholder="Insira sua Senha" data-minlength="6" required>
+			</div>
+			<span class="help-block">Mínimo de seis (6) digitos</span>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4 input-group">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-lock"></span></span>
+				<input type="password" class="form-control" id="confirmaSenha"  placeholder="Repita sua Senha" 
+				data-match="#senha" data-match-error="Atenção! As senhas não estão iguais." required>
+			</div>
+			<div class="help-block with-errors"></div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label> <input type="checkbox"> Remember me
+					</label>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+</body>
+</html>

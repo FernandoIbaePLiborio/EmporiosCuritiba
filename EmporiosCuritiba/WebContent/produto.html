@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="produtosModulo">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="controller/produtos.js"></script>
+<script src="controller/usuarios.js"></script>
+<script src="controller/app.js"></script>
+<script src="js/main.js"></script>
+<script src="menu.html"></script>
+<!-- jquery -->
+<script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+</head>
+<body ng-controller="produtosController">
+	<div ng-include src="'menu.html'"></div>
+	<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-formMargem sem-padding">
+			<div class="col-sm-6">
+				<h2>Produtos</h2>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-6">
+							<input type="Text" required ng-model="produto.nome" class="form-control" id="nome" disabled placeholder="Nome">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<textarea type="Text" ng-model="produto.descricao" class="form-control" id="descricao" placeholder="Descricao" style="resize: none"></textarea>
+						</div>
+					</div>
+					<div class="div-button">
+						<button type="submit" ng-click="limparCampos()"	class="btn btn-novo btn-sm">Novo</button>
+						<button ng-disabled="!produto.nome" type="submit" ng-click="gravar()" class="btn btn-gravar btn-sm">Gravar</button>
+						<button type="submit" ng-click="excluir()" class="btn btn-excluir btn-sm">Excluir</button>
+						<input type="Text" ng-model="pesquisaProduto" id="pesquisa" placeholder="Digite sua pesquisa" class="pesquisarProdutos" >
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-6 div-form-img">
+				<img src="{{produto.foto}}" id="foto" class="img img-responsive img-rounded" alt="">
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sem-padding">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" 
+				ng-repeat="produtosTabela in produtos | filter:pesquisaProduto"	ng-click="selecionaProduto(produtosTabela)">
+				<div align="center" class="div-img-produto">
+					<p>{{produtosTabela.nome}}</p>
+					<img src="{{produtosTabela.foto}}" class="img img-responsive img-rounded" alt="" >
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validator.min.js"></script>
+</body>
+</html>

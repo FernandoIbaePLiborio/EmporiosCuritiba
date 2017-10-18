@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "=//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+<!-- 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property> -->
+		
+		<!-- Detalhes do Banco de Dados -->
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">postgres</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/EMPORIOS</property>
+		<!-- <property name="connection.url">jdbc:mysql://localhost:3306/EMPORIOS</property> -->
+		<property name="connection.pool_size">1</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- Propriedades Adicionais -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">validate</property>
+
+		<!-- Dialeto e Driver -->
+
+		<!-- Mapeamento das Classes -->
+		<mapping class="com.emporios.model.Autenticacao" />
+		<mapping class="com.emporios.model.Fornecedor" />
+		<mapping class="com.emporios.model.Endereco" />
+		<mapping class="com.emporios.model.Cliente" />
+		<mapping class="com.emporios.model.Funcionario" />
+		<mapping class="com.emporios.model.Categoria" />
+		<mapping class="com.emporios.model.Produto" />
+		<mapping class="com.emporios.model.Produto_Fornecedor" />
+	</session-factory>
+</hibernate-configuration>

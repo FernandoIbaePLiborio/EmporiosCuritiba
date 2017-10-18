@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<link rel="icon" type="image/ico" href="icone.ico">
+<html ng-app="usuariosModulo">
+<head>
+<!-- <link rel="shortcut icon" href="imagens/icone.ico" type="image/x-icon"> -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="js/main.js"></script>
+<script src="controller/app.js"></script>
+<script src="controller/usuarios.js"></script>
+<script src="login.html"></script>
+<!-- jquery -->
+<script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
+
+<!-- Crypto -->
+<script src="components/core-min.js"></script>
+<script src="rollups/sha1.js"></script>
+<script src="rollups/aes.js"></script>
+<script src="components/enc-base64-min.js"></script>
+<script src="components/enc-utf16-min.js"></script>
+
+<title>Empórios Curitiba</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+<link href="css/botoesPersonalizados.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+</head>
+<body ng-controller="usuariosController">
+	<div class="navbar-default alinhamento-cabecalho" class="col-xs-12 col-sm-12 col-md-12 col-lg-12>
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+			aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+			<span class="icon-bar"></span> <span class="icon-bar"></span>
+		</button>
+		<a id="emporios" class="navbar-brand" href="index.html">Empórios Curitiba</a>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#about">Sobre</a></li>
+				<li><a href="#contact">Contato</a></li>
+				<li><a href="produto.html">Produtos</a></li>
+				<li><a href="cliente.html">Cadastro Cliente</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Sistema<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Locais</a></li>
+						<li><a href="#">Feiras</a></li>
+						<li><a href="#">Eventos</a></li>
+						<li role="separator" class="divider"></li>
+						<li class="dropdown-header">Matérias</li>
+						<li><a href="materias.html">Curiosidades</a></li>
+						<li><a href="#">Meus Pedidos</a></li>
+					</ul></li>
+			</ul>
+			<div class="navbar-collapse collapse margin-top-botoes" ng-controller="usuariosController">
+				<!-- <p ng-bind="usuarioLog"></p> -->
+				<a href="cadastro.html" type="submit" class="btn btn-default" role="button">Cadastro</a>
+				<a href="login.html" type="submit" class="btn btn-default" role="button" ng-bind="usuarioLog">Login</a>
+				<a href="ServletLogout" type="submit" class="btn btn-default" role="button">Logout</a>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/validator.min.js"></script>
+	</div>
+</body>
+</html>

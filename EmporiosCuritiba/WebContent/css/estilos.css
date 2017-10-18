@@ -1,0 +1,60 @@
+#emporios{
+	background-color: green;
+	color: white;
+}
+th {background-color: #D3D3D3;}
+h2{
+	text-shadow: 4px 4px 7px rgba(150, 165, 150, 0.97);
+	margin: 50px;
+}
+.alinhamento-cadastro-usu{margin-left: 300px ;}
+.alinhamento-cabecalho{
+	padding: 5px;
+	/* float: right !important; */
+}
+.alinhamento-margin-left{margin-left: 30px;}
+.alinhamento-container-top{
+	padding: 3px 2px 0;
+	margin: 0 auto 5px;
+	height: 57px;
+}
+.margin-top-botoes{
+	padding: 7px;
+	float: right;
+}
+.div-button{margin-bottom: 25px;}
+.div-formMargem{margin: 25px;}
+.div-formMargem .div-form-img{
+	padding: 25px 0 20px;
+}
+.sem-padding{padding:0;}
+.div-img-produto{
+	height: 220px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.div-img-produto img{
+	max-height: 150px;
+}
+.pesquisarProdutos{
+	padding-right: 71px;
+	padding-bottom: 4px;
+	padding-top: 2px;
+}
+.visivel{
+	display: block;
+	display: none;
+}
+.rodape{
+	position: absolut;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+    background-color: #eafaf1;
+    /* background-color: #eee; */
+}
+
+/* cores => http://htmlcolorcodes.com/color-chart/flat-design-color-chart/ */
