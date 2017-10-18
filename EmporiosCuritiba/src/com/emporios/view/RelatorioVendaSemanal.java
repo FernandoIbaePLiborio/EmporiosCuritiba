@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.emporios.controller.Produto_FornecedorController;
-import com.emporios.dto.Produto_FornecedorDTO;
+import com.emporios.controller.ProdutoFornecedorController;
+import com.emporios.dto.ProdutoFornecedorDTO;
 import com.emporios.jasper.JasperVendaSemanalFactory;
-import com.emporios.model.Produto_Fornecedor;
+import com.emporios.model.ProdutoFornecedor;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -35,9 +35,9 @@ public class RelatorioVendaSemanal
         parameters.put("NIVEL", "EmporiosCuritiba");
 
         // Obtendo a lista de Usuarios
-        Produto_FornecedorDTO tDto = Produto_FornecedorController.pesquisar();
+        ProdutoFornecedorDTO tDto = ProdutoFornecedorController.pesquisar();
         if (tDto.isOk()) {
-            List<Produto_Fornecedor> tLista = tDto.getLista();
+            List<ProdutoFornecedor> tLista = tDto.getLista();
             // DataSource
             JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);
 
@@ -59,9 +59,9 @@ public class RelatorioVendaSemanal
         }
 
         // Obtendo a lista de usuarios
-        tDto = Produto_FornecedorController.pesquisarCategoria("Armazem");
+        tDto = ProdutoFornecedorController.pesquisarCategoria("Armazem");
         if (tDto.isOk()){
-            List<Produto_Fornecedor> tLista = tDto.getLista();
+            List<ProdutoFornecedor> tLista = tDto.getLista();
 
             // DataSource
             JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);

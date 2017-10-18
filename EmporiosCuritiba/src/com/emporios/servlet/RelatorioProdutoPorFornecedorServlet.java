@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.emporios.controller.Produto_FornecedorController;
-import com.emporios.dto.Produto_FornecedorDTO;
+import com.emporios.controller.ProdutoFornecedorController;
+import com.emporios.dto.ProdutoFornecedorDTO;
 import com.emporios.jasper.JasperFactoryProdutosPorFornecedor;
-import com.emporios.model.Produto_Fornecedor;
+import com.emporios.model.ProdutoFornecedor;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -58,10 +58,10 @@ public class RelatorioProdutoPorFornecedorServlet extends HttpServlet
             parameters.put("Produto", "EmporiosCuritiba");
 
             // Obtendo a lista de alunos
-            Produto_FornecedorDTO tDto = Produto_FornecedorController.produtoPorFornecedor();
+            ProdutoFornecedorDTO tDto = ProdutoFornecedorController.produtoPorFornecedor();
             if (tDto.isOk())
             {
-                List<Produto_Fornecedor> tLista = tDto.getLista();
+                List<ProdutoFornecedor> tLista = tDto.getLista();
 
                 // DataSource
                 JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);

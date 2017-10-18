@@ -32,7 +32,7 @@ public class ItemVenda implements Serializable {
 	//bi-directional many-to-one association to ProdutoFornecedor
 	@ManyToOne
 	@JoinColumn(name="id_produto")
-	private Produto_Fornecedor produtoFornecedor;
+	private ProdutoFornecedor produtoFornecedor;
 
 	public ItemVenda() {
 	}
@@ -77,11 +77,11 @@ public class ItemVenda implements Serializable {
 		this.pedido = pedido;
 	}
 
-	public Produto_Fornecedor getProdutoFornecedor() {
+	public ProdutoFornecedor getProdutoFornecedor() {
 		return this.produtoFornecedor;
 	}
 
-	public void setProdutoFornecedor(Produto_Fornecedor produtoFornecedor) {
+	public void setProdutoFornecedor(ProdutoFornecedor produtoFornecedor) {
 		this.produtoFornecedor = produtoFornecedor;
 	}
 

@@ -7,7 +7,7 @@ import com.emporios.dao.hibernate.EnderecoHibernateDAO;
 import com.emporios.dao.hibernate.FornecedorHibernateDAO;
 import com.emporios.dao.hibernate.FuncionarioHibernateDAO;
 import com.emporios.dao.hibernate.ProdutoHibernateDAO;
-import com.emporios.dao.hibernate.Produto_FornecedorHibernateDAO;
+import com.emporios.dao.hibernate.ProdutoFornecedorHibernateDAO;
 
 public class DaoFactory {
 	
@@ -39,7 +39,7 @@ public class DaoFactory {
         return new ProdutoHibernateDAO();
     }
     
-    public static Produto_FornecedorDAO getProduto_FornecedorDAO() {
-        return new Produto_FornecedorHibernateDAO();
+    public static ProdutoFornecedorDAO getProduto_FornecedorDAO() {
+        return new ProdutoFornecedorHibernateDAO();
     }
 }

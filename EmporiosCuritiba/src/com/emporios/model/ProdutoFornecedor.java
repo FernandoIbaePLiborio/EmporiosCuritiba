@@ -18,7 +18,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "PRODUTO_FORNECEDOR")
-public class Produto_Fornecedor implements Serializable, Cloneable {
+public class ProdutoFornecedor implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -5965125464424485228L;
 
@@ -30,7 +30,7 @@ public class Produto_Fornecedor implements Serializable, Cloneable {
 	private String descricao;
 	private BigDecimal preco_unitario;
 
-	public Produto_Fornecedor() {
+	public ProdutoFornecedor() {
 	}
 
 	@Id()
@@ -140,7 +140,7 @@ public class Produto_Fornecedor implements Serializable, Cloneable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto_Fornecedor other = (Produto_Fornecedor) obj;
+		ProdutoFornecedor other = (ProdutoFornecedor) obj;
 		if (id != other.id)
 			return false;
 		return true;

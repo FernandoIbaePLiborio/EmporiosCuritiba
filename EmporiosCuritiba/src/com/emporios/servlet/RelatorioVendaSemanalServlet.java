@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.emporios.controller.Produto_FornecedorController;
-import com.emporios.dto.Produto_FornecedorDTO;
+import com.emporios.controller.ProdutoFornecedorController;
+import com.emporios.dto.ProdutoFornecedorDTO;
 import com.emporios.jasper.JasperVendaSemanalFactory;
-import com.emporios.model.Produto_Fornecedor;
+import com.emporios.model.ProdutoFornecedor;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -43,9 +43,9 @@ public class RelatorioVendaSemanalServlet extends HttpServlet {
             response.setContentType("application/pdf");
             Map<String, Object> parameters = new HashMap<String, Object>();
             parameters.put("NIVEL", "EmporiosCuritiba");
-            Produto_FornecedorDTO tDto = Produto_FornecedorController.pesquisaVendaSemanal();
+            ProdutoFornecedorDTO tDto = ProdutoFornecedorController.pesquisaVendaSemanal();
             if (tDto.isOk()){
-                List<Produto_Fornecedor> tLista = tDto.getLista();
+                List<ProdutoFornecedor> tLista = tDto.getLista();
                 JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);
                 JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
                 JasperExportManager.exportReportToPdfStream(jasperPrint,tSaida);

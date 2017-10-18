@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.emporios.controller.Produto_FornecedorController;
-import com.emporios.dto.Produto_FornecedorDTO;
+import com.emporios.controller.ProdutoFornecedorController;
+import com.emporios.dto.ProdutoFornecedorDTO;
 import com.emporios.jasper.JasperFactoryProdutosPorFornecedor;
-import com.emporios.model.Produto_Fornecedor;
+import com.emporios.model.ProdutoFornecedor;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -35,10 +35,10 @@ public class RelatorioProdutoPorFornecedorBean
         parameters.put("Produto", "EmporiosCuritiba");
 
         // Obtendo a lista de Usuarios
-        Produto_FornecedorDTO tDto = Produto_FornecedorController.produtoPorFornecedor();
+        ProdutoFornecedorDTO tDto = ProdutoFornecedorController.produtoPorFornecedor();
         if (tDto.isOk())
         {
-            List<Produto_Fornecedor> tLista = tDto.getLista();
+            List<ProdutoFornecedor> tLista = tDto.getLista();
             // DataSource
             JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);
 
@@ -59,10 +59,10 @@ public class RelatorioProdutoPorFornecedorBean
         }
 
         // Obtendo a lista de usuarios
-        tDto = Produto_FornecedorController.produtoPorFornecedor();
+        tDto = ProdutoFornecedorController.produtoPorFornecedor();
         if (tDto.isOk())
         {
-            List<Produto_Fornecedor> tLista = tDto.getLista();
+            List<ProdutoFornecedor> tLista = tDto.getLista();
 
             // DataSource
             JRDataSource dataSource = new JRBeanCollectionDataSource(tLista);

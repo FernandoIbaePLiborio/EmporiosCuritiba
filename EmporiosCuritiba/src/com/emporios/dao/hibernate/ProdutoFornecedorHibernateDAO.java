@@ -10,16 +10,16 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
-import com.emporios.daointerface.Produto_FornecedorDAO;
+import com.emporios.daointerface.ProdutoFornecedorDAO;
 import com.emporios.hibernate.HibernateUtil;
 import com.emporios.model.Categoria;
-import com.emporios.model.Produto_Fornecedor;
+import com.emporios.model.ProdutoFornecedor;
 import com.emporios.util.ExceptionUtil;
 
-public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
+public class ProdutoFornecedorHibernateDAO implements ProdutoFornecedorDAO {
 
 	@Override
-	public Produto_Fornecedor create(Produto_Fornecedor pProduto_Fornecedor) {
+	public ProdutoFornecedor create(ProdutoFornecedor pProduto_Fornecedor) {
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
@@ -34,11 +34,11 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 
 	// Método para recuperar um autenticacao da base de dados (SELECT)
 	@Override
-	public Produto_Fornecedor recovery(int pMatricula) {
+	public ProdutoFornecedor recovery(int pMatricula) {
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
-			Produto_Fornecedor tProduto_Fornecedor = (Produto_Fornecedor) tSessao.get(Produto_Fornecedor.class, pMatricula);
+			ProdutoFornecedor tProduto_Fornecedor = (ProdutoFornecedor) tSessao.get(ProdutoFornecedor.class, pMatricula);
 			return tProduto_Fornecedor;
 		} catch (HibernateException tExcept) {
 			ExceptionUtil.mostrarErro(tExcept, "Erro no método de recuperação do produto");
@@ -48,7 +48,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 
 	// Método para atualizar um autenticacao na base de dados (UPDATE)
 	@Override
-	public Produto_Fornecedor update(Produto_Fornecedor pProduto_Fornecedor) {
+	public ProdutoFornecedor update(ProdutoFornecedor pProduto_Fornecedor) {
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
@@ -67,7 +67,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
-			tSessao.delete(tSessao.get(Produto_Fornecedor.class, pMatricula));
+			tSessao.delete(tSessao.get(ProdutoFornecedor.class, pMatricula));
 			tSessao.flush();
 			return true;
 		} catch (HibernateException tExcept) {
@@ -81,8 +81,8 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Produto_Fornecedor> search() {
-		List<Produto_Fornecedor> tLista = new ArrayList<>();
+	public List<ProdutoFornecedor> search() {
+		List<ProdutoFornecedor> tLista = new ArrayList<>();
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
@@ -99,8 +99,8 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 		 */
 		@Override
 		@SuppressWarnings("unchecked")
-		public List<Produto_Fornecedor> quantidadeVendaSemanal() {
-			List<Produto_Fornecedor> tLista = new ArrayList<>();
+		public List<ProdutoFornecedor> quantidadeVendaSemanal() {
+			List<ProdutoFornecedor> tLista = new ArrayList<>();
 			try {
 				SessionFactory tFactory = HibernateUtil.getSessionFactory();
 				Session tSessao = tFactory.getCurrentSession();
@@ -118,12 +118,12 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Produto_Fornecedor> produtosFornecedor(int pFornecedor) {
+	public List<ProdutoFornecedor> produtosFornecedor(int pFornecedor) {
 		// Acertando o critério de pesquisa
 		String tProdutoFornecedor = "%" + pFornecedor + "%";
 
 		// Criando a tLista vazia
-		List<Produto_Fornecedor> tLista = new ArrayList<>();
+		List<ProdutoFornecedor> tLista = new ArrayList<>();
 
 		try {
 			// Obtendo a sessão hibernate
@@ -131,7 +131,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 			Session tSessao = tFactory.getCurrentSession();
 
 			// Criando o critério para pesquisa
-			Criteria tCriterio = tSessao.createCriteria(Produto_Fornecedor.class)
+			Criteria tCriterio = tSessao.createCriteria(ProdutoFornecedor.class)
 					.add(Restrictions.like("Produto_Fornecedor", tProdutoFornecedor).ignoreCase());
 
 			// Recuperando a lista via hibernate
@@ -147,7 +147,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 
 	// Método para pesquisar por nome todos os produtos de uma categoria
 	@SuppressWarnings("unchecked")
-	public List<Produto_Fornecedor> buscaPorCategoria(String pCategoria) {
+	public List<ProdutoFornecedor> buscaPorCategoria(String pCategoria) {
 
 		// Acertando o critério de pesquisa
 		String categoria = "%" + pCategoria + "%";
@@ -167,12 +167,12 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 		}
 		int pCategoriaProduto = Integer.parseInt(categoria);
 
-		List<Produto_Fornecedor> tLista = new ArrayList<>();
+		List<ProdutoFornecedor> tLista = new ArrayList<>();
 		try {
 			// Obtendo a sessão hibernate
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
 			Session tSessao = tFactory.getCurrentSession();
-			Criteria tCriterio = tSessao.createCriteria(Produto_Fornecedor.class).add(Restrictions.like("Produto_Fornecedor", pCategoriaProduto).ignoreCase());
+			Criteria tCriterio = tSessao.createCriteria(ProdutoFornecedor.class).add(Restrictions.like("Produto_Fornecedor", pCategoriaProduto).ignoreCase());
 
 			// return tSessao.createQuery("select * from Produto_Fornecedor pf
 			// where pf.categorias.nome =
@@ -193,12 +193,12 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Produto_Fornecedor> searchByProduto_Fornecedor(String pProduto) {
+	public List<ProdutoFornecedor> searchByProduto_Fornecedor(String pProduto) {
 		// Acertando o critério de pesquisa
 		String tProdutoPesquisa = "%" + pProduto + "%";
 
 		// Criando a tLista vazia
-		List<Produto_Fornecedor> tLista = new ArrayList<>();
+		List<ProdutoFornecedor> tLista = new ArrayList<>();
 
 		try {
 			// Obtendo a sessão hibernate
@@ -206,7 +206,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 			Session tSessao = tFactory.getCurrentSession();
 
 			// Criando o critério para pesquisa
-			Criteria tCriterio = tSessao.createCriteria(Produto_Fornecedor.class)
+			Criteria tCriterio = tSessao.createCriteria(ProdutoFornecedor.class)
 					.add(Restrictions.like("Produto_Fornecedor", tProdutoPesquisa).ignoreCase());
 
 			// Recuperando a lista via hibernate
@@ -223,7 +223,7 @@ public class Produto_FornecedorHibernateDAO implements Produto_FornecedorDAO {
 	 * Método retorna Relatório de Produto por Fornecedor.
 	 */
 	@Override
-	public List<Produto_Fornecedor> produtoPorFornecedor() {
+	public List<ProdutoFornecedor> produtoPorFornecedor() {
 		
 		try {
 			SessionFactory tFactory = HibernateUtil.getSessionFactory();
