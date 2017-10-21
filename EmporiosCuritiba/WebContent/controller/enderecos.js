@@ -20,7 +20,7 @@ enderecosModulo.controller("enderecosController", function($scope, $http) {
 	$scope.limparCampos = function() {
 		$scope.endereco = "";
 	}
-
+	
 	$scope.buscaCEP = function(){
 		var cepLimpo = $scope.endereco.cep.replace(/\-/g,'');
 		var cepLimpo = cepLimpo.replace(/\./g,'');
@@ -33,6 +33,7 @@ enderecosModulo.controller("enderecosController", function($scope, $http) {
 	
 	$scope.gravar = function() {
 		if ($scope.endereco.id == undefined) {
+			if ($scope.endereco.numero == undefined){breack;}
 			var end = new Object();
 			end.cep = $scope.endereco.cep.replace(/\-/g,'');
 			end.logradouro = $scope.endereco.logradouro;
@@ -41,6 +42,7 @@ enderecosModulo.controller("enderecosController", function($scope, $http) {
 			end.bairro = $scope.endereco.bairro;
 			end.localidade = $scope.endereco.localidade;
 			end.uf = $scope.endereco.uf;
+			
 			$http.post(urlEndereco+"/Criar",end).then(function(response) {
 				alert(response.data.mensagem);
 					if (response.data.ok == true){
