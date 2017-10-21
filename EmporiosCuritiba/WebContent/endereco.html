@@ -23,7 +23,7 @@
 				<div class="form-group">
 					<div class="col-sm-3">
 						<input type="Text" required ng-model="endereco.cep"	class="form-control" id="cep" placeholder="CEP"
-						 onkeypress="mascara(this, mcep)" maxlength="10" ng-keydown="$event.keyCode === 13 && buscaCEP()">
+						 onkeypress="mascara(this, mcep)" maxlength="10" ng-blur="buscaCEP()" ng-keydown="$event.keyCode === 13 && buscaCEP()">
 					</div>
 				</div>
 				<div class="form-group">
@@ -33,7 +33,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-4">
-						<input type="Text" ng-model="endereco.numero" class="form-control" id="numero" placeholder="Número" onkeyup="masc_idade(this);" maxlength="15">
+						<input type="Text" ng-model="endereco.numero" class="form-control" id="numero" placeholder="Número" onkeyup="masc_idade(this);" maxlength="15" required="true">
 						</div>
 				</div>
 				<div class="form-group">
