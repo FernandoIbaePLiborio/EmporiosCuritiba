@@ -104,9 +104,9 @@ public class ProdutoFornecedorHibernateDAO implements ProdutoFornecedorDAO {
 			try {
 				SessionFactory tFactory = HibernateUtil.getSessionFactory();
 				Session tSessao = tFactory.getCurrentSession();
-				Query tQuery = tSessao.createQuery("select count(*) quantidade, fornec.companhia, TO_CHAR(p.dataEntrega,'DAY') "
-						+ "from Fornecedor fornec, Pedido p, Funcionario fun where fornec.id = fun.fornecedor.id "
-						+ "and fun.id = p.funcionario.id group by TO_CHAR(p.dataEntrega,'DAY'), fornec.companhia"); 
+				Query tQuery = tSessao.createQuery("SELECT COUNT(*) quantidade, fornec.companhia, TO_CHAR(p.dataEntrega,'DAY') "
+						+ " from Fornecedor fornec, Pedido p, Funcionario fun where fornec.id = fun.fornecedor.id "
+						+ " and fun.id = p.funcionario.id group by TO_CHAR(p.dataEntrega,'DAY'), fornec.companhia"); 
 				return tQuery.list();
 			} catch (HibernateException tExcept) {
 				ExceptionUtil.mostrarErro(tExcept, "Erro no método para listar Produtos ");

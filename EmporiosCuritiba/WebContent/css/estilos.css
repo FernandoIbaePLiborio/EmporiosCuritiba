@@ -48,13 +48,12 @@ h2{
 }
 .rodape{
 	position: absolut;
-    bottom: 0px;
     width: 100%;
     height: 100%;
     padding: 10px;
-    margin: 0px;
-    background-color: #eafaf1;
-    /* background-color: #eee; */
+    background-color: #D5F5E3;
+    height: 100px;
+    margin-top: 40px;
 }
 
 /* cores => http://htmlcolorcodes.com/color-chart/flat-design-color-chart/ */

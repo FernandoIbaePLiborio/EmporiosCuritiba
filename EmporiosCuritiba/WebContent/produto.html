@@ -7,6 +7,7 @@
 <link href="css/estilos.css" rel="stylesheet">
 <link href="css/carousel.css" rel="stylesheet">
 <link href="css/botoesPersonalizados.css" rel="stylesheet">
+<!-- Controller -->
 <script src="js/angular.min.js"></script>
 <script src="controller/produtos.js"></script>
 <script src="controller/usuarios.js"></script>
@@ -16,7 +17,7 @@
 <!-- jquery -->
 <script type="text/javascript" src="jqueryui/jquery-ui.min.js"></script>
 </head>
-<body ng-controller="produtosController">
+<body ng-controller="produtosController" style="padding-bottom: inherit !important;">
 	<div ng-include src="'menu.html'"></div>
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-formMargem sem-padding">
@@ -59,7 +60,7 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.min.js"></script>
+	<div ng-include src="'rodape.html'"></div>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/validator.min.js"></script>
 </body>
