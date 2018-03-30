@@ -1,21 +1,5 @@
 var clientesModulo = angular.module('clientesModulo', ['ngMaterial']);
 clientesModulo.controller("clientesController", function($scope, $http) {
-
-		/*function dateController ($scope) {
-         $scope.myDate = new Date();
-         $scope.minDate = new Date(
-            $scope.myDate.getFullYear(),
-            $scope.myDate.getMonth() - 2,
-            $scope.myDate.getDate());
-         $scope.maxDate = new Date(
-            $scope.myDate.getFullYear(),
-            $scope.myDate.getMonth() + 2,
-            $scope.myDate.getDate());
-         $scope.onlyWeekendsPredicate = function(date) {
-            var day = date.getDay();
-            return day === 0 || day === 6;
-         }
-      }*/
 	/* urlCliente = "http://104.198.248.92:8080/EmporiosCuritiba/WS/Cliente"; */
 	urlCliente = "http://localhost:8080/EmporiosCuritiba/WS/Cliente";
 	$scope.listarClientes = function() {

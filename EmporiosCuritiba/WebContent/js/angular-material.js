@@ -30099,23 +30099,22 @@ function MdContactChips($mdTheming, $mdUtil) {
    */
   angular.module('material.components.datepicker').config(["$provide", function($provide) {
     // TODO(jelbourn): Assert provided values are correctly formatted. Need assertions.
-
     /** @constructor */
     function DateLocaleProvider() {
       /** Array of full month names. E.g., ['January', 'Febuary', ...] */
-      this.months = null;
+      this.months = ['Janeiro', 'Fevereiro', 'Março', 'Abril','Maio', 'Junho', 'Julho','Agosto', 'Setembro', 'Outubro','Novembro','Dezembro'];
 
       /** Array of abbreviated month names. E.g., ['Jan', 'Feb', ...] */
-      this.shortMonths = null;
+      this.shortMonths = ['Jan', 'Fev', 'Mar', 'Abril','Maio', 'Jun', 'Jul','Ago', 'Set', 'Out','Nov','Dez'];
 
       /** Array of full day of the week names. E.g., ['Monday', 'Tuesday', ...] */
-      this.days = null;
+      this.days = ['Domingo','Segunda', 'Terça', 'Quarta', 'Quinta','Sexta', 'Sabado'];
 
       /** Array of abbreviated dat of the week names. E.g., ['M', 'T', ...] */
-      this.shortDays = null;
+      this.shortDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
       /** Array of dates of a month (1 - 31). Characters might be different in some locales. */
-      this.dates = null;
+      this.dates = null; 
 
       /** Index of the first day of the week. 0 = Sunday, 1 = Monday, etc. */
       this.firstDayOfWeek = 0;
@@ -30125,7 +30124,7 @@ function MdContactChips($mdTheming, $mdUtil) {
        * @type {(function(Date): string)}
        */
       this.formatDate = null;
-
+      
       /**
        * Function that converts a date string to a Date object (the date portion)
        * @type {function(string): Date}
@@ -30194,7 +30193,7 @@ function MdContactChips($mdTheming, $mdUtil) {
           formatDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 1, 0, 0);
         }
 
-        return $filter('date')(formatDate, 'M/d/yyyy', timezone);
+        return $filter('date')(formatDate, 'd/M/yyyy', timezone);
       }
 
       /**

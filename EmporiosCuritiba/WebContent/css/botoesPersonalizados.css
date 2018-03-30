@@ -91,9 +91,9 @@ fieldset[disabled] .btn-excluir.active {
 }
 
 .btn-novo { 
-  color: #050000; 
-  background-color: #B6FACC; 
-  border-color: #407575; 
+  color: #050000;
+  background-color: #B6FACC;
+  border-color: #FAFAFA;
 } 
  
 .btn-novo:hover, 
@@ -102,8 +102,8 @@ fieldset[disabled] .btn-excluir.active {
 .btn-novo.active, 
 .open .dropdown-toggle.btn-novo { 
   color: #050000; 
-  background-color: #9AC9A9; 
-  border-color: #407575; 
+  background-color: #9AC9A9;
+  border-color: #FAFAFA;
 } 
  
 .btn-novo:active, 
@@ -128,10 +128,10 @@ fieldset[disabled] .btn-novo:active,
 .btn-novo[disabled].active, 
 fieldset[disabled] .btn-novo.active { 
   background-color: #B6FACC; 
-  border-color: #407575; 
-} 
+  border-color: #FAFAFA; 
+}
  
 .btn-novo .badge { 
   color: #B6FACC; 
-  background-color: #050000; 
+  background-color: #ffffff; 
 }

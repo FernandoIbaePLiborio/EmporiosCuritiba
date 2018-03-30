@@ -9,7 +9,7 @@
 		
 		<!-- Detalhes do Banco de Dados -->
 		<property name="connection.username">postgres</property>
-		<property name="connection.password">postgres</property>
+		<property name="connection.password">clarinet</property>
 		<property name="connection.url">jdbc:postgresql://localhost:5432/EMPORIOS</property>
 		<!-- <property name="connection.url">jdbc:mysql://localhost:3306/EMPORIOS</property> -->
 		<property name="connection.pool_size">1</property>

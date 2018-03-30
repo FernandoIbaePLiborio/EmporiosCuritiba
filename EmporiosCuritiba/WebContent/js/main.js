@@ -1,5 +1,4 @@
 $(function(){
-	
 	$("#modal").modal({backdrop:false, keyboard:false});
 	
 	$("#modal01").modal("show");
@@ -14,7 +13,6 @@ $(function(){
 		$('#myAlert').show()
 	});
 }); */ 
-
 document.querySelector('form input').oninvalid = function(evt) {
     // cancela comportamento padrão do browser
     evt.preventDefault();
@@ -24,13 +22,6 @@ document.querySelector('form input').oninvalid = function(evt) {
         alert("Nome obrigatório!");
     }
 };
-
-
-
-
-
-
-
 /*$(function(){
     $(".close").click(function(){
        $("#myAlert").alert("hide");

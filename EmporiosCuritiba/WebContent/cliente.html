@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="css/angular-material.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"> -->
 </head>
+
 <body ng-controller="clientesController as ctrl" ng-cloak>
 
 	<div ng-include src="'menu.html'"></div>
@@ -48,11 +48,10 @@
 						<input type="Text" ng-model="cliente.cpf" class="form-control" id="descricao" placeholder="CPF" onkeypress="mascara(this, mcpf)" maxlength="14">
 					</div>
 				</div>
-				<div layout-gt-xs="row">
-					<div flex-gt-xs>
-						<md-datepicker ng-model="cliente.dataNascimento" md-placeholder="Data" md-is-open="ctrl.isOpen" onkeypress="mascara(this, mdata)" maxlength="14"></md-datepicker>
-						<md-button class="md-primary md-raised" ng-click="ctrl.isOpen = true">Data de Nascimento</md-button>
-					</div>
+				<div class="form-group">
+					<md-datepicker ng-model="cliente.dataNascimento"  ng-keypress="mascara(this, mdata)" md-placeholder="Data" md-is-open="ctrl.isOpen">
+					</md-datepicker>
+					<md-button class="md-primary md-raised" ng-click="ctrl.isOpen = true">Nascimento</md-button>
 				</div>
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" ng-click="limparCampos()"	class="btn btn-novo btn-sm">Novo</button>
@@ -63,22 +62,13 @@
 		</div>
 	</div>
 	<script src="js/angular.min.js"></script>
-	<script src="controller/usuarios.js"></script>
-	<script src="controller/app.js"></script>
-	<script src="controller/clientes.js"></script>
-	<script src="js/main.js"></script>
-	<script src="menu.html"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/validator.min.js"></script>
 	<script src="js/angular-animate.min.js"></script>
 	<script src="js/angular-aria.min.js"></script>
 	<script src="js/angular-messages.min.js"></script>
 	<script src="js/angular-material.min.js"></script>
-	<script src="js/angular.js"></script>
-	<script src="js/angular-route.min.js"></script>
-	<!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script> -->
 	<script src="js/angular-material.js"></script>
 	<script src="js/mascaras.js"></script>
+	<script src="menu.html"></script>
+	<script src="controller/clientes.js"></script>
 </body>
 </html>
