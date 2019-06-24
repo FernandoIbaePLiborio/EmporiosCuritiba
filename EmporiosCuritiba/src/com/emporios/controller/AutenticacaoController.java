@@ -7,6 +7,7 @@ import com.emporios.daointerface.AutenticacaoDAO;
 import com.emporios.daointerface.DaoFactory;
 import com.emporios.dto.AutenticacaoDTO;
 import com.emporios.model.Autenticacao;
+import com.emporios.util.Email;
 import com.emporios.util.Validador;
 
 public class AutenticacaoController implements Serializable {
@@ -29,7 +30,7 @@ public class AutenticacaoController implements Serializable {
 		if (tAutenticacao == null) {
 			return new AutenticacaoDTO(false, "Problemas na gravação de autenticação");
 		} else {
-			//Email.envioEmail(tAutenticacao.getEmail());
+			Email.envioEmail(tAutenticacao.getEmail());
 			return new AutenticacaoDTO(true, "Autenticação gravada com sucesso", tAutenticacao);
 		}
 	}
@@ -123,6 +124,7 @@ public class AutenticacaoController implements Serializable {
 			}
 			return sb.toString();
 		} catch (java.security.NoSuchAlgorithmException e) {
+			e.getCause();
 		}
 		return null;
 	}
