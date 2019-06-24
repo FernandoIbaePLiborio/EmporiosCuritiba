@@ -26,14 +26,16 @@ public class Email {
 
 		Properties tPropriedades = new Properties();
 		tPropriedades.put("mail.smtp.host", tServidor);
-		tPropriedades.put("mail.smtp.port", tPorta);
 		tPropriedades.put("mail.smtp.user", tUsuario);
 		tPropriedades.put("mail.smtp.auth", "true");
+		tPropriedades.put("mail.smtp.port", tPorta);
+		tPropriedades.put("mail.smtp.ssl.enable", "true");
 		tPropriedades.put("mail.smtp.debug", "true");
 		tPropriedades.put("mail.smtp.socketFactory.port", tPorta);
 		tPropriedades.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-		tPropriedades.put("mail.smtp.socketFactory.fallback", "false");
+		// tPropriedades.put("mail.smtp.socketFactory.fallback", "false");
 		// tPropriedades.put("mail.smtp.starttls.enable", "true");
+		
 		// Obtendo o objeto Session
 		Session tSessao = Session.getDefaultInstance(tPropriedades, new Autenticador(tUsuario, tSenha));
 		try {
@@ -43,11 +45,10 @@ public class Email {
 			// Configurando a mensagem.
 			tMensagem.setFrom(new InternetAddress(tOrigem));
 			tMensagem.setRecipients(Message.RecipientType.TO, InternetAddress.parse(tDestino));
-			tMensagem.setSubject("Seja bem Vindo ao Time!!!");
-			tMensagem.setText(
-					"Empórios Curitiba fica feliz em receber você. " + "seja bem vindo ao nosso sistema. "
-					                + "Segue nosso endereco no Github:"
-					                + "( https://github.com/FernandoIbaePLiborio/EmporiosCuritiba )");
+			tMensagem.setSubject("Emporios Curitiba");
+			tMensagem.setText("		Empório Curitiba fica feliz em receber você.\n\n"
+					+"Contatos: (41) 9 9983-0281\n"
+					+"Idealizador: https://fernandoibaepliborio.github.io/profile.github.io");
 
 			// Enviando a mensagem
 			Transport.send(tMensagem);
@@ -56,11 +57,11 @@ public class Email {
 		} catch (MessagingException tExcept) {
 			throw new RuntimeException(tExcept);
 		}
-	}
+	}	
 
 	private static String obterSenha() {
 		String email = "emporiosaudecuritiba@gmail.com";
-		String senha = "guitar123";
+		String senha = "senhapadrão";
 		PasswordAuthentication tSenha = new PasswordAuthentication(email, senha);
 		char[] tSenhaCh = tSenha.getPassword().toCharArray();
 		return new String(tSenhaCh);

@@ -37,7 +37,7 @@ usuariosModulo.controller("usuariosController", function($scope, $http) {
 				console.log(err);
 			};
 		} else {
-			// $scope.crypto($scope.usuario.senha)
+			//$scope.crypto($scope.usuario.senha)
 			$http.put(urlUsuario + "/Atualizar", $scope.usuario).success(
 					function(usuario) {
 						alert(response.data.mensagem);
